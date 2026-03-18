@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김남홍 코치 | BALL PARK ACBA</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#07090D;--dark:#0E1118;--card:#141820;
+  --border:rgba(255,255,255,0.07);--white:#F4F4F2;--muted:#6B7280;
+  --red:#E8180E;--red2:#FF3B30;--gold:#C8973A;--sky:#4A9FD4;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans KR',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ── HERO ── */
+.hero{min-height:100vh;position:relative;display:flex;flex-direction:column;overflow:hidden;background:var(--black)}
+.hero-gradient{position:absolute;inset:0;background:radial-gradient(ellipse 65% 70% at 100% 85%,rgba(232,24,14,0.2) 0%,transparent 60%),radial-gradient(ellipse 40% 50% at 0% 15%,rgba(74,159,212,0.07) 0%,transparent 60%);z-index:0}
+.hero-lines{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.022) 1px,transparent 1px);background-size:60px 60px;z-index:0}
+.hero-photo-wrap{position:absolute;bottom:0;right:0;width:68%;max-width:360px;z-index:2}
+.hero-photo-wrap img{width:100%;display:block;mask-image:linear-gradient(to top,transparent 0%,black 15%);-webkit-mask-image:linear-gradient(to top,transparent 0%,black 15%)}
+.hero-accent{position:absolute;right:0;bottom:0;width:2px;height:60%;background:linear-gradient(to top,var(--red),transparent);z-index:3}
+.hero-content{position:relative;z-index:3;padding:60px 24px 76px;flex:1;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(232,24,14,0.4);border-radius:2px;padding:5px 12px;font-size:10px;letter-spacing:3px;color:var(--red2);margin-bottom:18px;width:fit-content;animation:fu 0.7s ease both}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--red2);border-radius:50%;animation:blink 1.8s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.25}}
+.hero-name{font-family:'Oswald',sans-serif;font-size:clamp(58px,17vw,100px);font-weight:700;line-height:0.88;color:var(--white);letter-spacing:-1px;animation:fu 0.7s 0.07s ease both}
+.hero-name em{color:var(--red);font-style:normal}
+.hero-role{font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:5px;color:rgba(255,255,255,0.38);text-transform:uppercase;margin-top:13px;animation:fu 0.7s 0.13s ease both}
+.hero-divider{width:40px;height:2px;background:var(--red);margin:16px 0;animation:fu 0.7s 0.18s ease both}
+.hero-spec{font-size:12px;color:rgba(255,255,255,0.45);line-height:2;margin-bottom:6px;animation:fu 0.7s 0.22s ease both}
+.hero-spec strong{color:var(--gold);font-weight:600}
+.hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 22px;animation:fu 0.7s 0.26s ease both}
+.tag{font-size:10px;letter-spacing:1px;color:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.1);padding:4px 10px;border-radius:2px}
+.tag.gold{color:var(--gold);border-color:rgba(200,151,58,0.3);background:rgba(200,151,58,0.06)}
+.hero-stats{display:flex;gap:22px;margin-bottom:26px;animation:fu 0.7s 0.3s ease both}
+.sn{font-family:'Oswald',sans-serif;font-size:26px;font-weight:600;color:var(--red)}
+.sl{font-size:10px;color:var(--muted);letter-spacing:1px;margin-top:-2px}
+.btn-main{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;padding:15px 28px;border-radius:2px;font-size:13px;font-weight:700;letter-spacing:2px;text-decoration:none;text-transform:uppercase;transition:all 0.2s;animation:fu 0.7s 0.34s ease both}
+.btn-main:hover{background:var(--red2);transform:translateY(-2px)}
+.btn-main .ar{transition:transform 0.2s}
+.btn-main:hover .ar{transform:translateX(4px)}
+@keyframes fu{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── SECTION ── */
+.sec{padding:72px 24px}
+.lbl{font-family:'Oswald',sans-serif;font-size:10px;letter-spacing:4px;color:var(--red);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.lbl::before{content:'';width:28px;height:1px;background:var(--red)}
+.stitle{font-family:'Oswald',sans-serif;font-size:clamp(30px,8vw,44px);font-weight:600;letter-spacing:1px;line-height:1.05;margin-bottom:28px}
+
+/* ── STORY ── */
+.story{background:var(--dark)}
+.story-lead{font-size:17px;font-weight:700;color:var(--white);line-height:1.7;margin-bottom:20px;border-left:3px solid var(--red);padding-left:16px}
+.story-body{font-size:14px;font-weight:300;color:rgba(255,255,255,0.58);line-height:2.1;margin-bottom:14px}
+.story-body strong{color:rgba(255,255,255,0.88);font-weight:500}
+
+/* 공사 사진 */
+.build-photo{margin:24px 0;border-radius:6px;overflow:hidden;position:relative}
+.build-photo img{width:100%;display:block;object-fit:cover;max-height:300px}
+.build-photo-caption{position:absolute;bottom:0;left:0;right:0;padding:14px 16px;background:linear-gradient(to top,rgba(7,9,13,0.9),transparent);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.6);text-transform:uppercase}
+
+.vision-block{margin-top:28px;background:rgba(232,24,14,0.06);border:1px solid rgba(232,24,14,0.18);border-radius:4px;padding:22px 18px}
+.vision-label{font-size:10px;letter-spacing:3px;color:var(--red);margin-bottom:10px}
+.vision-text{font-size:15px;font-weight:500;color:var(--white);line-height:1.9}
+.vision-text span{display:block;font-size:11px;color:var(--muted);margin-top:10px}
+
+/* ── CAREER (한화이글스 + 포수) ── */
+.career{background:var(--black)}
+.career-hero-img{width:100%;border-radius:6px;overflow:hidden;margin-bottom:20px;position:relative}
+.career-hero-img img{width:100%;display:block;object-fit:cover;max-height:260px}
+.career-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,9,13,0.7) 0%,transparent 50%)}
+.career-hero-tag{position:absolute;bottom:16px;left:16px;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:2px;padding:5px 12px;border-radius:2px}
+
+.career-split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.career-card{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.career-card img{width:100%;display:block;object-fit:cover;height:160px}
+.career-card-body{padding:14px}
+.career-card-tag{font-size:10px;letter-spacing:2px;color:var(--red);margin-bottom:6px}
+.career-card-title{font-size:13px;font-weight:700;color:var(--white);line-height:1.5;margin-bottom:4px}
+.career-card-sub{font-size:11px;color:var(--muted)}
+.career-card.pro .career-card-tag{color:var(--gold)}
+
+/* ── CRED ── */
+.cred{background:var(--dark)}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.cc{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:18px 14px;transition:border-color 0.2s}
+.cc:hover{border-color:rgba(232,24,14,0.3)}
+.cc-icon{font-size:20px;margin-bottom:10px}
+.cc-title{font-size:12px;font-weight:700;color:var(--white);line-height:1.5;margin-bottom:4px}
+.cc-sub{font-size:11px;color:var(--muted)}
+.cc.wide{grid-column:span 2}
+.cc.gold-card{border-color:rgba(200,151,58,0.25);background:rgba(200,151,58,0.04)}
+.cc.gold-card .cc-title{color:var(--gold)}
+
+/* ── FACILITY ── */
+.facility{background:var(--black)}
+.facility-main{border-radius:6px;overflow:hidden;margin-bottom:8px;position:relative}
+.facility-main img{width:100%;display:block;object-fit:cover;max-height:240px}
+.facility-main-label{position:absolute;top:14px;left:14px;background:rgba(7,9,13,0.8);border:1px solid rgba(255,255,255,0.1);font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.7);padding:5px 10px;border-radius:2px}
+.facility-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fslot{border-radius:4px;overflow:hidden;position:relative}
+.fslot img{width:100%;display:block;object-fit:cover;height:160px}
+.fslot-label{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(to top,rgba(7,9,13,0.85),transparent);font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.7);text-transform:uppercase}
+.facility-specs{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.fspec{background:var(--card);border:1px solid var(--border);border-radius:4px;padding:12px 14px;font-size:11px;color:rgba(255,255,255,0.6)}
+.fspec strong{display:block;font-family:'Oswald',sans-serif;font-size:16px;color:var(--white);margin-bottom:2px}
+
+/* ── PRICE ── */
+.price{background:var(--dark)}
+.price-grid{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.pcard{background:var(--card);border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.pcard.ft{border-color:rgba(232,24,14,0.35);background:linear-gradient(135deg,rgba(232,24,14,0.08) 0%,var(--card) 60%)}
+.phead{padding:12px 18px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.pname{font-family:'Oswald',sans-serif;font-size:14px;letter-spacing:2px;color:var(--muted);text-transform:uppercase}
+.pcard.ft .pname{color:var(--red)}
+.pbadge{font-size:10px;font-weight:700;letter-spacing:1px;background:var(--red);color:#fff;padding:3px 10px;border-radius:2px}
+.pbody{padding:14px 18px}
+.prow{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.prow:last-child{border-bottom:none}
+.pdesc{font-size:13px;color:rgba(255,255,255,0.75)}
+.pdesc small{display:block;font-size:10px;color:var(--muted);margin-top:2px}
+.pamt{font-family:'Oswald',sans-serif;font-size:28px;font-weight:600;color:var(--white)}
+.pcard.ft .pamt{color:var(--red2)}
+.punit{font-size:12px;color:var(--muted);font-family:'Noto Sans KR',sans-serif}
+.price-note{margin-top:12px;background:rgba(74,159,212,0.07);border:1px solid rgba(74,159,212,0.15);border-radius:4px;padding:14px 16px;font-size:12px;color:rgba(255,255,255,0.55);line-height:1.9}
+.price-note strong{color:var(--sky)}
+
+/* ── CTA ── */
+.cta{padding:80px 24px 90px;background:var(--black);text-align:center;position:relative;overflow:hidden}
+.cta-glow{position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);width:340px;height:220px;background:radial-gradient(ellipse,rgba(232,24,14,0.18) 0%,transparent 70%);z-index:0}
+.cta-eye{font-size:10px;letter-spacing:4px;color:var(--red);text-transform:uppercase;margin-bottom:14px;position:relative;z-index:1}
+.cta-title{font-family:'Oswald',sans-serif;font-size:clamp(38px,10vw,54px);font-weight:700;letter-spacing:2px;line-height:1;margin-bottom:12px;position:relative;z-index:1}
+.cta-sub{font-size:13px;color:rgba(255,255,255,0.4);line-height:2;margin-bottom:32px;position:relative;z-index:1}
+.cta-btns{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1}
+.btn-outline{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.45);padding:14px 24px;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:1px;text-decoration:none;transition:all 0.2s}
+.btn-outline:hover{border-color:rgba(255,255,255,0.35);color:var(--white)}
+.cta-info{margin-top:32px;padding-top:24px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);line-height:2.3;position:relative;z-index:1}
+.cta-info strong{color:rgba(255,255,255,0.3);font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-gradient"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-photo-wrap">
+    <img src="honk.jpg" alt="김남홍 코치">
+    <div class="hero-accent"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">BALL PARK ACBA &middot; HEAD COACH</div>
+    <div class="hero-name">김<em>남</em>홍</div>
+    <div class="hero-role">Catcher · Hitting Specialist &amp; Founder</div>
+    <div class="hero-divider"></div>
+    <div class="hero-spec"><strong>한화이글스 출신</strong> &nbsp;|&nbsp; 포수 · 타격 전문</div>
+    <div class="hero-tags">
+      <span class="tag gold">한화이글스 출신</span>
+      <span class="tag">경남대 스포츠과학</span>
+      <span class="tag">포수 전문</span>
+      <span class="tag">HitTrax</span>
+      <span class="tag">ACBA 설립자</span>
+    </div>
+    <div class="hero-stats">
+      <div><div class="sn">200㎡</div><div class="sl">실내 훈련 시설</div></div>
+      <div><div class="sn">KBO</div><div class="sl">프로팀 출신</div></div>
+    </div>
+    <a class="btn-main" href="https://open.kakao.com/o/sHbG6MOh" target="_blank">레슨 상담하기 <span class="ar">→</span></a>
+  </div>
+</section>
+
+<!-- ══ STORY ══ -->
+<section class="sec story">
+  <div class="lbl">Story</div>
+  <div class="stitle">직접 짓고,<br>직접 증명한다</div>
+  <p class="story-lead">대한민국에 Driveline Baseball 같은 시설을 만들겠다는 꿈 하나로, 이른 나이에 모든 공사를 직접 손으로 해냈습니다.</p>
+
+  <!-- 공사 사진 -->
+  <div class="build-photo">
+    <img src="build.jpg" alt="ACBA 직접 공사">
+    <div class="build-photo-caption">2024 · BALL PARK ACBA 시설 공사 현장</div>
+  </div>
+
+  <p class="story-body">야탑고, 경남대 스포츠과학과를 거쳐 <strong>한화이글스</strong>에서 경험을 쌓았습니다. 포수로서 익힌 경기 읽는 눈, 타격을 데이터로 분해하는 방법론 — 그 모든 것을 담을 공간을 직접 설계하고 직접 지었습니다.</p>
+  <p class="story-body">문체부 주관 <strong>스포츠과학 아카데미</strong> 수료, 전문체육지도사·유소년스포츠지도사 취득, 한국복지사이버대학교 <strong>특임교수</strong>. 현장에서 가르치면서도 멈추지 않고 배우고 있습니다.</p>
+
+  <div class="vision-block">
+    <div class="vision-label">VISION</div>
+    <div class="vision-text">
+      "대한민국에 Driveline을 만드는 것.<br>
+      그에 맞는 코치가 되기 위해 계속해서 배우고 증명합니다."
+      <span>— 김남홍, BALL PARK ACBA 대표</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAREER ══ -->
+<section class="sec career">
+  <div class="lbl">Career</div>
+  <div class="stitle">프로의 눈으로<br>가르친다</div>
+
+  <!-- 한화이글스 사진 메인 -->
+  <div class="career-hero-img">
+    <img src="eagles.png" alt="한화이글스">
+    <div class="career-hero-overlay"></div>
+    <div class="career-hero-tag">한화이글스 출신</div>
+  </div>
+
+  <!-- 포수 + HitTrax 나란히 -->
+  <div class="career-split">
+    <div class="career-card pro">
+      <img src="catcher.jpg" alt="포수 경기">
+      <div class="career-card-body">
+        <div class="career-card-tag">SPECIALTY</div>
+        <div class="career-card-title">포수 전문<br>포수 장비 지도</div>
+        <div class="career-card-sub">경기 읽는 눈을 가르칩니다</div>
+      </div>
+    </div>
+    <div class="career-card">
+      <img src="hittrax.png" alt="HitTrax 타격">
+      <div class="career-card-body">
+        <div class="career-card-tag">DATA</div>
+        <div class="career-card-title">타격 전문<br>HitTrax 분석</div>
+        <div class="career-card-sub">데이터로 증명하는 훈련</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CRED ══ -->
+<section class="sec cred">
+  <div class="lbl">Credentials</div>
+  <div class="stitle">검증된 배경</div>
+  <div class="cred-grid">
+    <div class="cc gold-card"><div class="cc-icon">🦅</div><div class="cc-title">한화이글스 출신</div><div class="cc-sub">KBO 프로팀 현장 경험</div></div>
+    <div class="cc"><div class="cc-icon">🎓</div><div class="cc-title">경남대학교<br>스포츠과학과</div><div class="cc-sub">운동과학 학술 기반</div></div>
+    <div class="cc"><div class="cc-icon">📋</div><div class="cc-title">전문체육지도사<br>유소년스포츠지도사</div><div class="cc-sub">국가공인 지도 자격</div></div>
+    <div class="cc"><div class="cc-icon">🔬</div><div class="cc-title">문체부 스포츠과학<br>아카데미 수료</div><div class="cc-sub">데이터 기반 훈련 철학</div></div>
+    <div class="cc wide"><div class="cc-icon">🏫</div><div class="cc-title">한국복지사이버대학교 특임교수 &middot; BALL PARK ACBA 대표 설립자</div><div class="cc-sub">이론과 현장 동시 검증 — 직접 공사로 완성한 200㎡ 실내 훈련 시설</div></div>
+  </div>
+</section>
+
+<!-- ══ FACILITY ══ -->
+<section class="sec facility">
+  <div class="lbl">Facility</div>
+  <div class="stitle">훈련의 공간</div>
+
+  <!-- 시설 전경 (CCTV 사진) -->
+  <div class="facility-main">
+    <img src="facility.jpg" alt="BALL PARK ACBA 시설 전경">
+    <div class="facility-main-label">BALL PARK ACBA · 화성</div>
+  </div>
+
+  <!-- 레슨 현장 + 유소년 -->
+  <div class="facility-grid">
+    <div class="fslot">
+      <img src="lesson.jpg" alt="레슨 현장">
+      <div class="fslot-label">레슨 현장</div>
+    </div>
+    <div class="fslot">
+      <img src="youth.png" alt="유소년 훈련">
+      <div class="fslot-label">유소년 훈련</div>
+    </div>
+  </div>
+
+  <div class="facility-specs">
+    <div class="fspec"><strong>200㎡</strong>실내 전용 공간</div>
+    <div class="fspec"><strong>HitTrax</strong>데이터 분석 시스템</div>
+    <div class="fspec"><strong>5면</strong>개인 훈련 케이지</div>
+    <div class="fspec"><strong>피칭존</strong>전용 투구 공간</div>
+  </div>
+</section>
+
+<!-- ══ PRICE ══ -->
+<section class="sec price" id="price">
+  <div class="lbl">Pricing</div>
+  <div class="stitle">레슨 가격 안내</div>
+  <div class="price-grid">
+
+    <div class="pcard">
+      <div class="phead"><div class="pname">초등학생</div><span style="font-size:11px;color:var(--muted)">60분</span></div>
+      <div class="pbody">
+        <div class="prow"><div class="pdesc">1회 개인 레슨</div><div><span class="pamt">8</span><span class="punit">만원</span></div></div>
+        <div class="prow"><div class="pdesc">10회 패키지<small>회당 7만원</small></div><div><span class="pamt">70</span><span class="punit">만원</span></div></div>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="phead"><div class="pname">중학생</div><span style="font-size:11px;color:var(--muted)">90분</span></div>
+      <div class="pbody">
+        <div class="prow"><div class="pdesc">1회 개인 레슨</div><div><span class="pamt">12</span><span class="punit">만원</span></div></div>
+        <div class="prow"><div class="pdesc">10회 패키지<small>집중 훈련 추천</small></div><div><span class="pamt">110</span><span class="punit">만원</span></div></div>
+      </div>
+    </div>
+
+    <div class="pcard ft">
+      <div class="phead"><div class="pname">사회인</div><div class="pbadge">60분</div></div>
+      <div class="pbody">
+        <div class="prow"><div class="pdesc">1:1 개인 레슨</div><div><span class="pamt">8</span><span class="punit">만원</span></div></div>
+        <div class="prow"><div class="pdesc">10회 패키지</div><div><span class="pamt">70</span><span class="punit">만원</span></div></div>
+        <div class="prow"><div class="pdesc">그룹 레슨<small>2명~5명 / 1시간</small></div><div><span class="pamt">10</span><span class="punit">만원</span></div></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="price-note">첫 레슨 전 <strong>무료 상담</strong>을 진행합니다. 목표와 수준에 맞는 프로그램을 먼저 안내드린 후 시작합니다.<br><span style="color:var(--muted)">포수 장비 지도 · 시설 대관 문의도 카카오톡으로 연락주세요.</span></div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta">
+  <div class="cta-glow"></div>
+  <div class="cta-eye">지금 바로 시작하세요</div>
+  <div class="cta-title">첫 상담은<br>무료입니다</div>
+  <div class="cta-sub">한화이글스 출신 코치의 눈으로.<br>포수부터 타격까지, 데이터로 달라집니다.</div>
+  <div class="cta-btns">
+    <a class="btn-main" href="https://open.kakao.com/o/sHbG6MOh" target="_blank" style="justify-content:center">카카오톡으로 상담 신청 <span class="ar">→</span></a>
+    <a class="btn-outline" href="#price">레슨 가격 보기</a>
+  </div>
+  <div class="cta-info">
+    <strong>BALL PARK ACBA</strong><br>
+    경기도 화성시 안녕남로 119번길 20<br>
+    실내 200㎡ · HitTrax · 케이지 5면 · 포수 전용 장비 훈련
+  </div>
+</section>
+
+</body>
+</html>
